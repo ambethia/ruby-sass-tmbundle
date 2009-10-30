@@ -182,10 +182,6 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>#comment-block</string>
-				</dict>
-				<dict>
 					<key>match</key>
 					<string>(&amp;)</string>
 					<key>name</key>
@@ -306,10 +302,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>include</key>
-			<string>#comment-block</string>
-		</dict>
-		<dict>
 			<key>begin</key>
 			<string>^\s*((@)import\b)</string>
 			<key>beginCaptures</key>
@@ -394,6 +386,22 @@
 					<string>variable.parameter.url.sass</string>
 				</dict>
 			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>/\*</string>
+			<key>end</key>
+			<string>\*/</string>
+			<key>name</key>
+			<string>comment.block.sass</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>//</string>
+			<key>end</key>
+			<string>$\n?</string>
+			<key>name</key>
+			<string>comment.line.double-slash.sass</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -504,23 +512,6 @@
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>comment-block</key>
-		<dict>
-			<key>begin</key>
-			<string>( *)(/\*|\/)</string>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.comment.sass</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>^$</string>
-			<key>name</key>
-			<string>comment.block.sass</string>
-		</dict>
 		<key>property-value</key>
 		<dict>
 			<key>begin</key>
